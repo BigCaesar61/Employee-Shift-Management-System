@@ -53,3 +53,20 @@ if (shiftExists) {
 assignShift('John', 'Thursday', 5); //gives john a 5 hour shift on thursday
 assignShift('Emily', 'Friday', 8); //this will give us an error as emily already has a friday shift
 
+//Task 4: Create a Function to Calculate Total Hours Worked
+
+function calculateTotalHours(employeeName) {
+    const employee = employees.find(emp => emp.name === employeeName); //finds employee name
+
+    const totalHoursWorked = employee.shifts.reduce((total, shift) => total + shift.hours, 0);
+
+    console.log( `${employeeName} works a total of ${totalHoursWorked} hours.`); //logs total hours of an employee
+    
+}
+
+//using calculateTotalHours function
+
+calculateTotalHours('John');
+calculateTotalHours('Sara');
+calculateTotalHours('David');
+calculateTotalHours('Emily');
